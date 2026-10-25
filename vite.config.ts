@@ -1,0 +1,11 @@
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  define: {
+    // Shown as "Last updated" in the footer. en-CA formats as YYYY-MM-DD in local time.
+    __BUILD_DATE__: JSON.stringify(new Date().toLocaleDateString('en-CA')),
+  },
+})
